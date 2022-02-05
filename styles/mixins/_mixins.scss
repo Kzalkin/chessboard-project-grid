@@ -1,0 +1,6 @@
+@mixin grid-align ($c-start, $c-end, $r-start, $r-end) {
+    grid-column-start: $c-start;
+    grid-column-end: $c-end;
+    grid-row-start: $r-start;
+    grid-row-end: $r-end;
+}

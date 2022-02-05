@@ -1,0 +1,8 @@
+@use '../abstracts/sizes' as s;
+
+body {
+    height: 95vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}

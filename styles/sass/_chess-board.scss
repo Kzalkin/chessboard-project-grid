@@ -1,0 +1,90 @@
+@use '../abstracts/sizes' as s;
+@use '../abstracts/colors' as c;
+@use '../mixins/mixins' as m;
+
+.chess-board {
+    display: grid;
+    grid-template-columns:s.$number-letter-cell-size repeat(8, s.$board-cell-size) s.$number-letter-cell-size;
+    grid-template-rows: s.$number-letter-cell-size repeat(8, s.$board-cell-size) s.$number-letter-cell-size;
+    box-shadow: 0 5px 20px c.$board-shadow;
+    width: s.$board-width-height;
+    height: s.$board-width-height;
+
+    .top-board {
+        display: grid;
+        background-color: c.$number-letter-bg-color;
+        font-size: s.$number-letter-font-size;
+
+        & > div {
+            display: grid;
+            grid-template-columns: repeat(8, auto);
+            grid-template-rows: auto;
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    .top-board {
+        @include m.grid-align (2, 10, 1, 1);
+    }
+
+    .bottom-board {
+        @extend .top-board;
+        @include m.grid-align(2, 10, 10, 10);
+    }
+
+    .left-board {
+        display: grid;
+        background-color: c.$number-letter-bg-color;
+        font-size: s.$number-letter-font-size;
+
+        & > div {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: s.$number-letter-cell-size repeat(8, auto) s.$number-letter-cell-size;
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    .left-board {
+        @include m.grid-align(1, 1, 1, 11);
+    }
+    
+
+    .right-board {
+        @extend .left-board;
+        @include m.grid-align(10, 10, 1, 11);
+    }
+
+    .board-cell {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        font-size: s.$board-cell-font-size;
+
+        /*
+        &:nth-child(-2n+10),
+        &:nth-child(10) ~ &:nth-child(-2n+17),
+        &:nth-child(18) ~ &:nth-child(-2n+26),
+        &:nth-child(26) ~ &:nth-child(-2n+33),
+        &:nth-child(34) ~ &:nth-child(-2n+42),
+        &:nth-child(42) ~ &:nth-child(-2n+49),
+        &:nth-child(50) ~ &:nth-child(-2n+58),
+        &:nth-child(58) ~ &:nth-child(-2n+65) {
+            background-color: c.$board-cell-bg-color;
+        }
+        */
+    }
+}
+
+.board-cell:nth-child(-2n+10),
+.board-cell:nth-child(10) ~ .board-cell:nth-child(-2n+17),
+.board-cell:nth-child(18) ~ .board-cell:nth-child(-2n+26),
+.board-cell:nth-child(26) ~ .board-cell:nth-child(-2n+33),
+.board-cell:nth-child(34) ~ .board-cell:nth-child(-2n+42),
+.board-cell:nth-child(42) ~ .board-cell:nth-child(-2n+49),
+.board-cell:nth-child(50) ~ .board-cell:nth-child(-2n+58),
+.board-cell:nth-child(58) ~ .board-cell:nth-child(-2n+65) {
+    background-color: c.$board-cell-bg-color;
+}

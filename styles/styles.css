@@ -1,0 +1,94 @@
+body {
+  height: 95vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.chess-board {
+  display: grid;
+  grid-template-columns: 6.25% repeat(8, 10.9375%) 6.25%;
+  grid-template-rows: 6.25% repeat(8, 10.9375%) 6.25%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  width: 40vw;
+  height: 40vw;
+}
+.chess-board .top-board, .chess-board .bottom-board {
+  display: grid;
+  background-color: gray;
+  font-size: 1.2vw;
+}
+.chess-board .top-board > div, .chess-board .bottom-board > div {
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  grid-template-rows: auto;
+  text-align: center;
+  align-items: center;
+}
+.chess-board .top-board, .chess-board .bottom-board {
+  grid-column-start: 2;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.chess-board .bottom-board {
+  grid-column-start: 2;
+  grid-column-end: 10;
+  grid-row-start: 10;
+  grid-row-end: 10;
+}
+.chess-board .left-board, .chess-board .right-board {
+  display: grid;
+  background-color: gray;
+  font-size: 1.2vw;
+}
+.chess-board .left-board > div, .chess-board .right-board > div {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 6.25% repeat(8, auto) 6.25%;
+  text-align: center;
+  align-items: center;
+}
+.chess-board .left-board, .chess-board .right-board {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 11;
+}
+.chess-board .right-board {
+  grid-column-start: 10;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 11;
+}
+.chess-board .board-cell {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  font-size: 4vw;
+  /*
+  &:nth-child(-2n+10),
+  &:nth-child(10) ~ &:nth-child(-2n+17),
+  &:nth-child(18) ~ &:nth-child(-2n+26),
+  &:nth-child(26) ~ &:nth-child(-2n+33),
+  &:nth-child(34) ~ &:nth-child(-2n+42),
+  &:nth-child(42) ~ &:nth-child(-2n+49),
+  &:nth-child(50) ~ &:nth-child(-2n+58),
+  &:nth-child(58) ~ &:nth-child(-2n+65) {
+      background-color: c.$board-cell-bg-color;
+  }
+  */
+}
+
+.board-cell:nth-child(-2n+10),
+.board-cell:nth-child(10) ~ .board-cell:nth-child(-2n+17),
+.board-cell:nth-child(18) ~ .board-cell:nth-child(-2n+26),
+.board-cell:nth-child(26) ~ .board-cell:nth-child(-2n+33),
+.board-cell:nth-child(34) ~ .board-cell:nth-child(-2n+42),
+.board-cell:nth-child(42) ~ .board-cell:nth-child(-2n+49),
+.board-cell:nth-child(50) ~ .board-cell:nth-child(-2n+58),
+.board-cell:nth-child(58) ~ .board-cell:nth-child(-2n+65) {
+  background-color: rgba(128, 128, 128, 0.445);
+}
+
+/*# sourceMappingURL=styles.css.map */
