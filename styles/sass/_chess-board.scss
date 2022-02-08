@@ -63,21 +63,21 @@
         justify-content: center;
         font-size: s.$board-cell-font-size;
 
-        /*
+        
         &:nth-child(-2n+10),
-        &:nth-child(10) ~ &:nth-child(-2n+17),
-        &:nth-child(18) ~ &:nth-child(-2n+26),
-        &:nth-child(26) ~ &:nth-child(-2n+33),
-        &:nth-child(34) ~ &:nth-child(-2n+42),
-        &:nth-child(42) ~ &:nth-child(-2n+49),
-        &:nth-child(50) ~ &:nth-child(-2n+58),
-        &:nth-child(58) ~ &:nth-child(-2n+65) {
+        &:nth-child(10) ~ *:nth-child(-2n+17),
+        &:nth-child(18) ~ *:nth-child(-2n+26),
+        &:nth-child(26) ~ *:nth-child(-2n+33),
+        &:nth-child(34) ~ *:nth-child(-2n+42),
+        &:nth-child(42) ~ *:nth-child(-2n+49),
+        &:nth-child(50) ~ *:nth-child(-2n+58),
+        &:nth-child(58) ~ *:nth-child(-2n+65) {
             background-color: c.$board-cell-bg-color;
         }
-        */
+        
     }
 }
-
+/*
 .board-cell:nth-child(-2n+10),
 .board-cell:nth-child(10) ~ .board-cell:nth-child(-2n+17),
 .board-cell:nth-child(18) ~ .board-cell:nth-child(-2n+26),
@@ -87,4 +87,4 @@
 .board-cell:nth-child(50) ~ .board-cell:nth-child(-2n+58),
 .board-cell:nth-child(58) ~ .board-cell:nth-child(-2n+65) {
     background-color: c.$board-cell-bg-color;
-}
+}*/
