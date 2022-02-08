@@ -77,14 +77,3 @@
         
     }
 }
-/*
-.board-cell:nth-child(-2n+10),
-.board-cell:nth-child(10) ~ .board-cell:nth-child(-2n+17),
-.board-cell:nth-child(18) ~ .board-cell:nth-child(-2n+26),
-.board-cell:nth-child(26) ~ .board-cell:nth-child(-2n+33),
-.board-cell:nth-child(34) ~ .board-cell:nth-child(-2n+42),
-.board-cell:nth-child(42) ~ .board-cell:nth-child(-2n+49),
-.board-cell:nth-child(50) ~ .board-cell:nth-child(-2n+58),
-.board-cell:nth-child(58) ~ .board-cell:nth-child(-2n+65) {
-    background-color: c.$board-cell-bg-color;
-}*/
